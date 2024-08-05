@@ -82,7 +82,7 @@ rule fdr_track_chromosome:
     params:
         script=workflow.source_path("../scripts/fire-null-distribution.py"),
     resources:
-        mem_mb=get_mem_mb_xl,
+        mem_mb=get_large_mem_mb,
     shell:
         """
         tabix -h {input.fire} {wildcards.chrom} > {output.fire}
